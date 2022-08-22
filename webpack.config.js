@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "shell_app",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        custom_hooks: "custom_hooks@http://localhost:8081/remoteEntry.js",
+      },
       exposes: {},
       shared: {
         ...deps,
