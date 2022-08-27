@@ -2,13 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
+import { AppRouter } from "./routes/AppRouter.routes";
 
-const App = () => (
-  <div className="container">
-    <div>Name: shell_app</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-);
+const App = () => <AppRouter />;
 ReactDOM.render(<App />, document.getElementById("app"));
