@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container } from "../components/molecules/container/Container";
 
-const Counter = lazy(() => import("custom_hooks/Counter"));
+const AppShared = lazy(() => import("custom_hooks/AppShared"));
 
 export const AppRouter = () => {
   return (
@@ -12,7 +12,7 @@ export const AppRouter = () => {
           <Route path="/" element={<Container />}>
             <Route path="hooks" element={
               <Suspense fallback={<> Loading... </>}>
-                <Counter />
+                <AppShared />
               </Suspense>
             } />
             <Route path="context" element={<>Not Context yet</>} />
