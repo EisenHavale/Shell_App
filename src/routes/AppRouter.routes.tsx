@@ -7,16 +7,19 @@ const Counter = lazy(() => import("custom_hooks/Counter"));
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={"Loading"}>
+      
         <Routes>
           <Route path="/" element={<Container />}>
-            <Route path="counter" element={<Counter />} />
-            <Route path="context-excercise" element={<>Not Context yet</>} />
-            <Route path="custom-hook" element={<>No Cusmtom yet</>} />
+            <Route path="hooks" element={
+              <Suspense fallback={<> Loading... </>}>
+                <Counter />
+              </Suspense>
+            } />
+            <Route path="context" element={<>Not Context yet</>} />
+            <Route path="libraries" element={<>No Cusmtom yet</>} />
             <Route path="*" element={<>Not Found</>} />
           </Route>
         </Routes>
-      </Suspense>
     </BrowserRouter>
   );
 };
